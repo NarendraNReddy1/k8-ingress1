@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: narendranreddy/app1:v1.4
+        image: narendranreddy/app2:v1.4
 ---
 apiVersion: v1
 kind: Service
@@ -43,7 +43,6 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
-    # this annotation is useful to keep only ALB under joindevops group. if you don't give this it will create another ALB.
     alb.ingress.kubernetes.io/group.name: joindevops
 spec:
   ingressClassName: alb
@@ -57,4 +56,5 @@ spec:
           service:
             name: app2 # ALB Target group
             port:
-              number: 80
+              number: 80    
+
