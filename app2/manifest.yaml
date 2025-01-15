@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: narendranreddy/app2:v1.4
+        image: narendranreddy/app:v2.0
 ---
 apiVersion: v1
 kind: Service
